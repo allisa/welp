@@ -16,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/allisa/welp/issues"
   },
-  "homepage": "https://github.com/allisa/welp#readme"
+  "homepage": "https://github.com/allisa/welp#readme",
+  "dependencies": {
+    "dotenv": "^6.0.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "method-override": "^3.0.0",
+    "pg": "^7.4.3",
+    "superagent": "^4.0.0-beta.5"
+  }
 }
