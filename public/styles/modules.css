@@ -1,6 +1,5 @@
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
+h1{
+  text-align: center;
 }
 
 .card {
@@ -13,6 +12,11 @@
 
 img {
   max-width: 100%;
+}
+
+button, label{
+  display: block;
+  margin: 0 auto;
 }
 
 @media (max-width: 600px) {
