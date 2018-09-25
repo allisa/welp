@@ -26,6 +26,7 @@ app.use(methodOverride(function (req, res) {
 app.get('/results', helperFunction.getResults); //getResults);
 //app.get('/search', (req, res) => res.render('index'));
 app.get('/saved', (req, res) => res.render('pages/saved'));
+app.get('/about', (req, res) => res.render('pages/about'));
 
 app.get('*', (req, res) => {
   res.render('index');
