@@ -8,8 +8,6 @@
     <form method="GET" action="/results">
       <label for="cuisine">Cuisine: </label>
       <input type="text" name="cuisine" id="cuisine" required />
-      <label for="ratings">Ratings: </label>
-      <input type="number" step=".5" max="5" name="ratings" id="ratings" required />
       <label for="price">Price: </label>
       <select name="price">
         <option selected>
@@ -26,8 +24,12 @@
         </option>
       </select>
       <button name="submit">LET'S EAT!</button>
+      <input type="hidden" name="lat" id="lat" />
+      <input type="hidden" name="long" id="long" />
     </form>
   </section>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/app.js"></script>
 </body>
 
 </html>
