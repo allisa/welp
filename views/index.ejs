@@ -1,8 +1,33 @@
 <!DOCTYPE html>
 <html>
-  <%- include('partials/head') %>
-  <body>
-    <h1>Welp</h1>
-    <%- include('partials/card', {title: 'welpstuff'}) %>
-  </body>
+<%- include('partials/head') %>
+
+<body>
+  <h1>Welp</h1>
+  <section class="searchForms">
+    <form>
+      <label for="cuisine">Cuisine: </label>
+      <input type="text" name="cuisine" id="cuisine" required />
+      <label for="ratings">Ratings: </label>
+      <input type="text" name="ratings" id="ratings" required />
+      <label for="price">Price: </label>
+      <select name="price">
+        <option selected>
+          $
+        </option>
+        <option>
+          $$
+        </option>
+        <option>
+          $$$
+        </option>
+        <option>
+          $$$$
+        </option>
+      </select>
+      <button name="submit">LET'S EAT!</button>
+    </form>
+  </section>
+</body>
+
 </html>
