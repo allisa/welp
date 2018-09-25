@@ -19,9 +19,14 @@ const getResults = (req, res) => {
         res.render('error', { err: err });
       } else {
         let results = apiResponse.body.businesses.map(place => ({
-          name : place.name
+          name : place.name,
+          image: place.image_url,
+          category: place.categories[0].title,
+          rating: place.rating,
+          hours: (place.is_closed ? 'No :(' : 'Yes!!'),
+          url: place.url
         }));
-          
+
         console.log(results);
         res.render('pages/results', { results: results });
       }
