@@ -5,7 +5,7 @@
 <body>
   <%- include('partials/header', {title: 'Welp'}) %>
   <section class="searchForms">
-    <form>
+    <form method="GET" action="/results">
       <label for="cuisine">Cuisine: </label>
       <input type="text" name="cuisine" id="cuisine" required />
       <label for="ratings">Ratings: </label>
