@@ -10,13 +10,18 @@ client.connect();
 client.on('error', error => console.error(error));
 
 const getResults = (req, res) => {
+  console.log('before.get');
   superagent.get('https://api.yelp.com/v3/businesses/search?term=codefellows&location=seattle')
     .set({ 'Authorization': 'Bearer ' + process.env.YELP_KEY })
     .end((err, apiResponse) => {
       if (err) {
+        console.log('inside of error')
         res.render('error', { err: err });
       } else {
-        let results = apiResponse.body;
+        let results = apiResponse.body.businesses.map(place => ({
+          name : place.name
+        }));
+          
         console.log(results);
         res.render('pages/results', { results: results });
       }
