@@ -2,11 +2,11 @@
 
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT
 const ejs = require('ejs');
 
 const helperFunction = require('./helperfunctions');
 
+const PORT = process.env.PORT;
 app.set('view engine', 'ejs');
 app.use(express.static('./public'));
 app.use(express.json());
@@ -23,12 +23,14 @@ app.use(methodOverride(function (req, res) {
   }
 }));
 
-
-app.get('/results', (req, res) => res.render('pages/results'));
-app.get('/search', getResults);
+app.get('/results', (req, res) => res.render('pages/results')); //getResults);
+//app.get('/search', (req, res) => res.render('index'));
+app.get('/saved', (req, res) => res.render('pages/saved'));
 
 app.get('*', (req, res) => {
   res.render('index');
 })
 
-app.listen(PORT);
+app.listen(PORT, () => {
+  console.log(`listening on port ${PORT}!`);
+});

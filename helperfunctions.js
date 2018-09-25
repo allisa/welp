@@ -8,17 +8,17 @@ client.connect();
 client.on('error', error => console.error(error));
 const superagent = require('superagent');
 
-const getResults = (req, res) => {
-  superagent.get('urlforyelp')
-    .end((err, apiResponse) => {
-      if (err) {
-        res.render('error', { err: err });
-      } else {
-        let results = //complete after talking with jimmy about yelp api results
-    }
-      res.render('pages/search/results', { results: results });
-    });
-}
+// const getResults = (req, res) => {
+//   superagent.get('urlforyelp')
+//     .end((err, apiResponse) => {
+//       if (err) {
+//         res.render('error', { err: err });
+//       } else {
+//         let results = //complete after talking with jimmy about yelp api results
+//     }
+//       res.render('pages/search/results', { results: results });
+//     });
+// }
 
 const deleteRestaurant = (req, res) => {
   let SQL = 'DELETE FROM resaurants WHERE rest_id = $1;';
@@ -30,4 +30,9 @@ const deleteRestaurant = (req, res) => {
       res.redirect('/pages/saved');
     }
   });
+}
+
+module.exports = {
+  deleteRestaurant: deleteRestaurant
+  // getResults: getResults
 }
