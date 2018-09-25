@@ -2,9 +2,9 @@
   <h3>
     <%= results[0].name %>
   </h3>
-  <img src="https://s3-media1.fl.yelpcdn.com/bphoto/pAbn4vYBG4_2KzPlWCLAiA/o.jpg" alt="image" />
-  <p>Cuisine</p>
-  <p>Rating</p>
-  <p>Hours</p>
-  <p>Description</p>
+  <img src="<%= results[0].image %>" alt="image" />
+  <p>Category: <%= results[0].category %></p>
+  <p>Rating: <%= results[0].rating %></p>
+  <p>Open Now: <%= results[0].hours %></p>
+  <p><a href="<%= results[0].url %>">External Link</a></p>
 </div>

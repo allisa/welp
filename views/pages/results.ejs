@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html>
-<%- include('../partials/head') %>
-
-<body>
-  <h1>Welp</h1>
-  <div class="cardContainer">
-    <%- include('../partials/card', {title: 'welpstuff'}) %>
-    <p>
-      <%= results %>
-    </p>
-  </div>
-</body>
-
+  <%- include('../partials/head') %>
+  <body>
+    <%- include('../partials/header', {title: 'Search Results'}) %>
+    <div class="cardContainer">
+      <%- include('../partials/card') %>
+    </div>
+  </body>
 </html>
