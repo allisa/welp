@@ -1,10 +1,21 @@
+<% results.forEach(place =>  {%>
 <div class="card">
   <h3>
-    <%= results[0].name %>
+    <%= place.name %>
   </h3>
-  <img src="<%= results[0].image %>" alt="image" />
-  <p>Category: <%= results[0].category %></p>
-  <p>Rating: <%= results[0].rating %></p>
-  <p>Open Now: <%= results[0].hours %></p>
-  <p><a href="<%= results[0].url %>">External Link</a></p>
+  <img src="<%= place.image %>" alt="image" />
+  <p>Category:
+    <%= place.category %>
+  </p>
+  <p>Rating:
+    <%= place.rating %>
+  </p>
+  <p>Open Now:
+    <%= place.hours %>
+  </p>
+  <p><a href="<%= place.url %>">External Link</a></p>
+  <form method="POST" action="/place">
+    <button value="Add">Let's go here!</button>
+  </form>
 </div>
+<% }) %>
