@@ -14,8 +14,12 @@ $(document).ready(() => {
     $lat.val(position.coords.latitude);
     $long.val(position.coords.longitude);
   });
-});
 
-$('#clearAll').on('click', () => {
-  localStorage.set('key', JSON.stringify(arr));
-})
+  // $.ajax({
+  //   url: '/'
+  // })
+
+  $('#clearAll').on('click', () => {
+    localStorage.set('key', JSON.stringify(arr));
+  });
+});
