@@ -8,5 +8,5 @@ CREATE TABLE IF NOT EXISTS restaurants (
   yelp_url text,
   image_url text,
   latidude DECIMAL(9,6),
-  longitude DECIMAL(9,6),
+  longitude DECIMAL(9,6)
 );
