@@ -7,7 +7,7 @@ const superagent = require('superagent');
 const conString = process.env.DATABASE_URL;
 const client = new pg.Client(conString);
 client.connect();
-client.on('error', error => console.error(error));
+client.on('pages/error', error => console.error(error));
 
 const getResults = (req, res) => {
   let query = 'term=food';
@@ -21,7 +21,7 @@ const getResults = (req, res) => {
     .set({ 'Authorization': 'Bearer ' + process.env.YELP_KEY })
     .end((err, apiResponse) => {
       if (err) {
-        res.render('error', { err: err });
+        res.render('pages/error', { err: err });
       } else {
         let results = apiResponse.body.businesses.map(place => ({
           yelp_id: place.id,
@@ -45,7 +45,7 @@ const deleteRestaurant = (req, res) => {
   let values = [req.params.id];
   client.query(SQL, values, (err, result) => {
     if (err) {
-      res.render('error', { err: err });
+      res.render('pages/error', { err: err });
     } else {
       res.redirect('/pages/saved');
     }
@@ -68,7 +68,7 @@ const addPlace = (req, res) => {
   ];
   client.query(SQL, values, (err, result) => {
     if (err) {
-      res.render('error', { err: err });
+      res.render('pages/error', { err: err });
     } else {
       res.redirect('saved');
     }
