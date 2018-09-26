@@ -37,7 +37,7 @@ const getResults = (req, res) => {
 }
 
 const deleteRestaurant = (req, res) => {
-  let SQL = 'DELETE FROM resaurants WHERE rest_id = $1;';
+  let SQL = 'DELETE FROM resaurants WHERE id = $1;';
   let values = [req.params.id];
   client.query(SQL, values, (err, result) => {
     if (err) {
