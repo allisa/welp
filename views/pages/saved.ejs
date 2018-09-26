@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
-  <%- include('../partials/head') %>
-  <body>
-    <%- include('../partials/header', {title: 'Saved'}) %>
-    <div class="cardContainer">
-      <%- include('../partials/card', {results: results}) %>
-    </div>    
-    <button id="clearAll">Clear All</button>
-    <%- include('../partials/footer') %>
-  </body>
+<%- include('../partials/head') %>
+
+<body>
+  <%- include('../partials/header', {title: 'Saved'}) %>
+  <div class="cardContainer">
+    <%- include('../partials/card', {search: false}) %>
+  </div>
+  <button id="clearAll">Clear All</button>
+  <%- include('../partials/footer') %>
+</body>
+
 </html>

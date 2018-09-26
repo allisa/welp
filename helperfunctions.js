@@ -35,7 +35,8 @@ const getResults = (req, res) => {
           long: place.coordinates.longitude,
           yelp_url: place.url
         }));
-        res.render('pages/results', { results: results });
+        console.log(req.query.search);
+        res.render('pages/results', { results: results, search: req.query.search });
       }
     });
 }
@@ -81,7 +82,7 @@ const loadSaved = (req, res) => {
     if (err) {
       res.render('pages/error', { err: err });
     } else {
-      res.render('pages/saved', {results: result.rows});
+      res.render('pages/saved', { results: result.rows });
     }
   });
 };
