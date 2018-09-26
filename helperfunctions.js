@@ -11,12 +11,13 @@ client.on('error', error => console.error(error));
 
 const getResults = (req, res) => {
   let query = 'term=food';
-  let cat = `&categories=${req.query.cuisine}`
+  let cat = `&categories=${req.query.cuisine.toLowerCase()}`
+  let radius = `&radius=${req.query.radius * 1609}`;
   let lat = `&latitude=${req.query.lat}`;
   let long = `&longitude=${req.query.long}`;
   let limit = `&limit=4`;
 
-  superagent.get(`https://api.yelp.com/v3/businesses/search?${query}${cat}${long}${lat}${limit}`)
+  superagent.get(`https://api.yelp.com/v3/businesses/search?${query}${cat}${radius}${long}${lat}${limit}`)
     .set({ 'Authorization': 'Bearer ' + process.env.YELP_KEY })
     .end((err, apiResponse) => {
       if (err) {
