@@ -23,14 +23,15 @@ app.use(methodOverride(function (req, res) {
   }
 }));
 
-app.get('/results', helperFunction.getResults); //getResults);
-//app.get('/search', (req, res) => res.render('index'));
+app.get('/results', helperFunction.getResults);
 app.get('/saved', (req, res) => res.render('pages/saved'));
 app.get('/about', (req, res) => res.render('pages/about'));
 
 app.get('*', (req, res) => {
   res.render('index');
 })
+
+app.post('/place', () => console.log('redirect to results!'))
 
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}!`);

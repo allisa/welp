@@ -13,8 +13,17 @@
   <p>Open Now:
     <%= place.hours %>
   </p>
-  <p><a href="<%= place.url %>">External Link</a></p>
+  <p><a href="<%= yelp_place.url %>">External Link</a></p>
   <form method="POST" action="/place">
+    <input type="hidden" name="yelp_id" value="<%= place.yelp_id %>" />
+    <input type="hidden" name="name" value="<%= place.name %>" />
+    <input type="hidden" name="category" value="<%= place.categories %>" />
+    <input type="hidden" name="rating" value="<%= place.rating %>" />
+    <input type="hidden" name="address" value="<%= place.address %>" />
+    <input type="hidden" name="yelp_url" value="<%= place.yelp_url %>" />
+    <input type="hidden" name="image_url" value="<%= place.image_url %>" />
+    <input type="hidden" name="lat" value="<%= place.lat %>" />
+    <input type="hidden" name="long" value="<%= place.long %>" />
     <button value="Add">Let's go here!</button>
   </form>
 </div>

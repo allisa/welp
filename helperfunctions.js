@@ -25,11 +25,14 @@ const getResults = (req, res) => {
       } else {
         let results = apiResponse.body.businesses.map(place => ({
           name: place.name,
-          image: place.image_url,
+          image_url: place.image_url,
           categories: place.categories.map(item => item.title).join(', '),
           rating: place.rating,
+          address: place.location.display_address.join('\n'),
           hours: (place.is_closed ? 'No :(' : 'Yes!!'),
-          url: place.url
+          lat: place.coordinates.latitude,
+          long: place.coordinates.longitude,
+          yelp_url: place.url
         }));
         res.render('pages/results', { results: results });
       }
@@ -48,7 +51,23 @@ const deleteRestaurant = (req, res) => {
   });
 }
 
+const addPlace = (req, res) => {
+  let SQL = 'INSERT INTO restaurants(yelp_id, name, category, rating, longitude, latitude) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id;'
+
+  let values = [
+
+  ];
+  client.query(SQL, values, (err, result) => {
+    if (err) {
+      res.render('error', { err: err });
+    } else {
+      res.redirect('saved');
+    }
+  });
+}
+
 module.exports = {
   deleteRestaurant: deleteRestaurant,
-  getResults: getResults
+  getResults: getResults,
+  addPlace: addPlace
 }
