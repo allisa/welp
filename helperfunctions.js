@@ -70,13 +70,25 @@ const addPlace = (req, res) => {
     if (err) {
       res.render('pages/error', { err: err });
     } else {
-      res.redirect('saved');
+      res.redirect('/pages/saved');
     }
   });
 }
 
+const loadSaved = (req, res) => {
+  let SQL = 'SELECT * FROM restaurants;';
+  client.query(SQL, (err, result) => {
+    if (err) {
+      res.render('pages/error', { err: err });
+    } else {
+      res.render('pages/saved', {results: result.rows});
+    }
+  });
+};
+
 module.exports = {
   deleteRestaurant: deleteRestaurant,
   getResults: getResults,
-  addPlace: addPlace
+  addPlace: addPlace,
+  loadSaved: loadSaved
 }

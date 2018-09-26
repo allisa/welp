@@ -27,11 +27,10 @@ app.get('/', (req, res) => res.redirect('/search'));
 
 app.get('/results', helperFunction.getResults);
 app.get('/search', (req, res) => res.render('index'));
-app.get('/saved', (req, res) => res.render('pages/saved'));
 app.get('/about', (req, res) => res.render('pages/about'));
 
-
 app.post('/place', helperFunction.addPlace);
+app.get('/pages/saved', helperFunction.loadSaved);
 
 
 app.get('*', (req, res) => {
