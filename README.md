@@ -4,7 +4,7 @@ Code Fellows 301 Final Project
 **Author**: Allisa LeBeuf, Kris Riedman, Jimmy Nguyen, Andrew Powers
 
 ## Deployed Site 
-<!-- Deployed site link -->
+https://welpapp.herokuapp.com
 
 ## Description
 Our project lets people search for restaurants and decides for them where to eat.
