@@ -15,3 +15,7 @@ $(document).ready(() => {
     $long.val(position.coords.longitude);
   });
 });
+
+$('#clearAll').on('click', () => {
+  localStorage.set('key', JSON.stringify(arr));
+})
