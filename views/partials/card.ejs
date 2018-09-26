@@ -17,6 +17,7 @@
     <%= place.address %>
   </address>
   <p><a href="<%= place.yelp_url %>">External Link</a></p>
+  <% if (!!search) { %>
   <form method="POST" action="/place">
     <input type="hidden" name="yelp_id" value="<%= place.yelp_id %>" />
     <input type="hidden" name="name" value="<%= place.name %>" />
@@ -28,6 +29,11 @@
     <input type="hidden" name="lat" value="<%= place.lat %>" />
     <input type="hidden" name="long" value="<%= place.long %>" />
     <button value="Add">Let's go here!</button>
+    <% } else { %>
+    <form method="POST" action="/place"></form>
+    <input type="hidden" name="place.id" value="<%= place.id %>" />
+    <button value="Delete">Remove from Saved</button>
+    <% } %>
   </form>
 </div>
 <% }) %>

@@ -1,0 +1,26 @@
+h1{
+  text-align: center;
+}
+
+.card {
+  width: 30%;
+  padding: 20px;
+  margin: 20px;
+  border: 2px solid var(--secondary);
+  background-color: var(--neutral-background);
+}
+
+img {
+  max-width: 100%;
+}
+
+button, label{
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .card {
+    width: 85%;
+  }
+}
