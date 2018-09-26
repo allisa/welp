@@ -8,7 +8,7 @@ const helperFunction = require('./helperfunctions');
 
 const PORT = process.env.PORT;
 app.set('view engine', 'ejs');
-app.use(express.static('./public'));
+app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -23,13 +23,16 @@ app.use(methodOverride(function (req, res) {
   }
 }));
 
-app.get('/results', helperFunction.getResults); //getResults);
-//app.get('/search', (req, res) => res.render('index'));
+app.get('/', (req, res) => res.redirect('/search'));
+
+app.get('/results', helperFunction.getResults);
+app.get('/search', (req, res) => res.render('index'));
 app.get('/saved', (req, res) => res.render('pages/saved'));
 app.get('/about', (req, res) => res.render('pages/about'));
 
 app.get('*', (req, res) => {
-  res.render('index');
+  res.statusCode = 404;
+  res.send('404, page not found.')
 })
 
 app.listen(PORT, () => {
