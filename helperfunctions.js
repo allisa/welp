@@ -24,12 +24,16 @@ const getResults = (req, res) => {
         res.render('error', { err: err });
       } else {
         let results = apiResponse.body.businesses.map(place => ({
+          yelp_id: place.id,
           name: place.name,
-          image: place.image_url,
+          image_url: place.image_url,
           categories: place.categories.map(item => item.title).join(', '),
           rating: place.rating,
+          address: place.location.display_address.join('\n'),
           hours: (place.is_closed ? 'No :(' : 'Yes!!'),
-          url: place.url
+          lat: place.coordinates.latitude,
+          long: place.coordinates.longitude,
+          yelp_url: place.url
         }));
         res.render('pages/results', { results: results });
       }
@@ -48,7 +52,31 @@ const deleteRestaurant = (req, res) => {
   });
 }
 
+const addPlace = (req, res) => {
+  let SQL = 'INSERT INTO restaurants(yelp_id, name, category, rating, address, yelp_url, image_url, latitude, longitude) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING id;'
+
+  let values = [
+    req.query.yelp_id,
+    req.query.name,
+    req.query.category,
+    req.query.rating,
+    req.query.address,
+    req.query.yelp_url,
+    req.query.image_url,
+    req.query.latitude,
+    req.query.longitude
+  ];
+  client.query(SQL, values, (err, result) => {
+    if (err) {
+      res.render('error', { err: err });
+    } else {
+      res.redirect('saved');
+    }
+  });
+}
+
 module.exports = {
   deleteRestaurant: deleteRestaurant,
-  getResults: getResults
+  getResults: getResults,
+  addPlace: addPlace
 }

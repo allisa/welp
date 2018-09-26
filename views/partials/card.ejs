@@ -3,7 +3,7 @@
   <h3>
     <%= place.name %>
   </h3>
-  <img src="<%= place.image %>" alt="image" />
+  <img src="<%= place.image_url %>" alt="image" />
   <p>Specialties:
     <%= place.categories %>
   </p>
@@ -13,8 +13,20 @@
   <p>Open Now:
     <%= place.hours %>
   </p>
-  <p><a href="<%= place.url %>">External Link</a></p>
+  <address>
+    <%= place.address %>
+  </address>
+  <p><a href="<%= place.yelp_url %>">External Link</a></p>
   <form method="POST" action="/place">
+    <input type="hidden" name="yelp_id" value="<%= place.yelp_id %>" />
+    <input type="hidden" name="name" value="<%= place.name %>" />
+    <input type="hidden" name="category" value="<%= place.categories %>" />
+    <input type="hidden" name="rating" value="<%= place.rating %>" />
+    <input type="hidden" name="address" value="<%= place.address %>" />
+    <input type="hidden" name="yelp_url" value="<%= place.yelp_url %>" />
+    <input type="hidden" name="image_url" value="<%= place.image_url %>" />
+    <input type="hidden" name="lat" value="<%= place.lat %>" />
+    <input type="hidden" name="long" value="<%= place.long %>" />
     <button value="Add">Let's go here!</button>
   </form>
 </div>

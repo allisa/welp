@@ -35,6 +35,8 @@ app.get('*', (req, res) => {
   res.send('404, page not found.')
 })
 
+app.post('/place', () => console.log('redirect to results!'))
+
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}!`);
 });
