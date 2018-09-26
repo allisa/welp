@@ -53,18 +53,18 @@ const deleteRestaurant = (req, res) => {
 }
 
 const addPlace = (req, res) => {
-  let SQL = 'INSERT INTO restaurants(yelp_id, name, category, rating, address, yelp_url, image_url, latitude, longitude) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING id;'
+  let SQL = 'INSERT INTO restaurants (yelp_id, name, category, rating, address, yelp_url, image_url, latitude, longitude) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING id;'
 
   let values = [
-    req.query.yelp_id,
-    req.query.name,
-    req.query.category,
-    req.query.rating,
-    req.query.address,
-    req.query.yelp_url,
-    req.query.image_url,
-    req.query.latitude,
-    req.query.longitude
+    req.body.yelp_id,
+    req.body.name,
+    req.body.category,
+    req.body.rating,
+    req.body.address,
+    req.body.yelp_url,
+    req.body.image_url,
+    req.body.latitude,
+    req.body.longitude
   ];
   client.query(SQL, values, (err, result) => {
     if (err) {

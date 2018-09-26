@@ -30,12 +30,14 @@ app.get('/search', (req, res) => res.render('index'));
 app.get('/saved', (req, res) => res.render('pages/saved'));
 app.get('/about', (req, res) => res.render('pages/about'));
 
+
+app.post('/place', helperFunction.addPlace);
+
+
 app.get('*', (req, res) => {
   res.statusCode = 404;
   res.send('404, page not found.')
 })
-
-app.post('/place', () => console.log('redirect to results!'))
 
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}!`);
