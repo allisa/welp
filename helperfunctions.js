@@ -10,29 +10,26 @@ client.connect();
 client.on('error', error => console.error(error));
 
 const getResults = (req, res) => {
-  console.log(req.query);
-  let query = 'term=food&';
+  let query = 'term=food';
+  let cat = `&categories=${req.query.cuisine}`
   let lat = `&latitude=${req.query.lat}`;
   let long = `&longitude=${req.query.long}`;
   let limit = `&limit=4`;
 
-  superagent.get(`https://api.yelp.com/v3/businesses/search?${query}${long}${lat}${limit}`)
+  superagent.get(`https://api.yelp.com/v3/businesses/search?${query}${cat}${long}${lat}${limit}`)
     .set({ 'Authorization': 'Bearer ' + process.env.YELP_KEY })
     .end((err, apiResponse) => {
       if (err) {
-        console.log('inside of error')
         res.render('error', { err: err });
       } else {
         let results = apiResponse.body.businesses.map(place => ({
           name: place.name,
           image: place.image_url,
-          category: place.categories[0].title,
+          categories: place.categories.map(item => item.title).join(', '),
           rating: place.rating,
           hours: (place.is_closed ? 'No :(' : 'Yes!!'),
           url: place.url
         }));
-
-        console.log(results);
         res.render('pages/results', { results: results });
       }
     });
