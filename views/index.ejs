@@ -8,9 +8,9 @@
     <section class="searchForms">
       <form method="GET" action="/results">
         <label for="cuisine">Cuisine: </label>
-        <input type="text" name="cuisine" id="cuisine" required />
+        <input type="text" name="cuisine" id="cuisine" class="search-input" required />
         <label for="radius">Radius (1-5 miles): </label>
-        <input type="number" name="radius" id="radius" step="1" min="1" max="5" required />
+        <input type="number" name="radius" id="radius" step="1" min="1" max="5" class="search-input" required />
         <label for="price">Price: </label>
         <select name="price">
           <option selected value="1">
@@ -26,7 +26,7 @@
             $$$$
           </option>
         </select>
-        <button name="submit">LET'S EAT!</button>
+        <button name="submit" class="search-button">LET'S EAT!</button>
         <input type="hidden" name="lat" id="lat" />
         <input type="hidden" name="long" id="long" />
         <input type="hidden" name="search" id="search" value="true" />

@@ -1,6 +1,6 @@
 
 .card {
-  width: 30%;
+  width: 40%;
   padding: 20px;
   margin: 20px;
   border: 2px solid var(--secondary);
@@ -20,20 +20,42 @@ button, label{
 }
 
 button {
-  background-color: var(--neutral-background);
+  background-color: var(--secondary-darker);
   border-radius: 20px;
-  color: black;
+  color: var(--primary);
   padding: 8px;
   border: solid 2px var(--secondary-darker);
+
 }
 
-#radius {
-  width: 40px;
+.search-button {
+  margin-top: 30px;
+}
+
+.search-input, select {
+  min-width: 300px;
+  width: 100%;
+  margin: 0;
+  height: 60px;
 }
 
 a {
   color: var(--secondary-darker);
   padding: 5px;
+  text-decoration: none;
+  margin: 10px;
+  font-weight: bold; 
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Lobster', cursive;
+  font-size: 3em;
+  
 }
 
 @media (max-width: 600px) {
