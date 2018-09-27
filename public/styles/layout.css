@@ -1,9 +1,3 @@
-h1 {
-  text-align: center;
-  font-family: 'Lobster', cursive;
-  font-size: 3em;
-}
-
 .cardContainer {
   display: flex;
   flex-wrap: wrap;

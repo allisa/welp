@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
-  <%- include('../partials/head') %>
-  <body>
-    <%- include('../partials/header', {title: 'Search Results'}) %>
-    <div class="cardContainer">
-      <%- include('../partials/card') %>
-    </div>
-    <%- include('../partials/footer') %>
-    <script src="/js/results.js"></script>
-  </body>
+<%- include('../partials/head') %>
+
+<body>
+  <%- include('../partials/header', {title: 'Search Results'}) %>
+  <div class="cardContainer">
+    <%- include('../partials/card') %>
+  </div>
+  <p>Total Eats:
+    <%= results.length %>
+  </p>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="/js/results.js"></script>
+</body>
+
 </html>

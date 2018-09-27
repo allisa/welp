@@ -1,9 +1,9 @@
 :root {
   --neutral-background: #969696;
   --background: #F23D20;
-  --primary: #F9660D;
+  --primary: rgb(255, 220, 64);
   --secondary: rgb(44, 82, 71);
-  --secondary-darker:  #264A81;
+  --secondary-darker:  rgb(110, 140, 185);
   --neutral: rgb(13, 146, 22);
 }
 
@@ -14,4 +14,6 @@ body {
   margin: 0 auto;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
+  font-size: 2.5em;
+  color: var(--primary);
 }
