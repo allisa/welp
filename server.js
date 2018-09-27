@@ -29,6 +29,7 @@ app.get('/results', helperFunction.getResults);
 app.get('/search', (req, res) => res.render('index'));
 app.get('/about', (req, res) => res.render('pages/about'));
 
+app.delete('/place', helperFunction.deletePlace);
 app.post('/place', helperFunction.addPlace);
 app.get('/pages/saved', helperFunction.loadSaved);
 
@@ -37,6 +38,7 @@ app.get('*', (req, res) => {
   res.statusCode = 404;
   res.send('404, page not found.')
 })
+
 
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}!`);

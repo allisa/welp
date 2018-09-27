@@ -35,7 +35,6 @@ const getResults = (req, res) => {
           long: place.coordinates.longitude,
           yelp_url: place.url
         }));
-        console.log(req.query.search);
         res.render('pages/results', { results: results, search: req.query.search });
       }
     });
@@ -87,9 +86,24 @@ const loadSaved = (req, res) => {
   });
 };
 
+const deletePlace = (req, res) => {
+  let SQL = 'DELETE FROM restaurants WHERE id = $1;'
+  let values = [
+    req.body.id
+  ];
+  client.query(SQL, values, (err, result) => {
+    if (err) {
+      res.render('pages/error', { err: err });
+    } else {
+      res.render('pages/saved', { results: result.rows });
+    }
+  });
+}
+
 module.exports = {
   deleteRestaurant: deleteRestaurant,
   getResults: getResults,
   addPlace: addPlace,
-  loadSaved: loadSaved
+  loadSaved: loadSaved,
+  deletePlace: deletePlace
 }
