@@ -70,21 +70,26 @@ const addPlace = (req, res) => {
     if (err) {
       res.render('pages/error', { err: err });
     } else {
-      res.redirect('/pages/saved');
+      res.redirect(`pages/saved/${result.rows[0].id}?save=true`);
     }
   });
 }
 
-const loadSaved = (req, res) => {
-  let SQL = 'SELECT * FROM restaurants;';
-  client.query(SQL, (err, result) => {
+const saveLocal = (req, res) => {
+  res.render('pages/saved', { save: req.query.save });
+}
+
+const returnData = (req, res) => {
+  let SQL = 'SELECT * FROM restaurants WHERE id=$1;';
+  let values = [req.params.id];
+  client.query(SQL, values, (err, result) => {
     if (err) {
       res.render('pages/error', { err: err });
     } else {
-      res.render('pages/saved', { results: result.rows });
+      res.send(result.rows[0]);
     }
-  });
-};
+  })
+}
 
 const deletePlace = (req, res) => {
   let SQL = 'DELETE FROM restaurants WHERE id = $1;'
@@ -95,7 +100,7 @@ const deletePlace = (req, res) => {
     if (err) {
       res.render('pages/error', { err: err });
     } else {
-      res.render('pages/saved', { results: result.rows });
+      res.render('pages/saved');
     }
   });
 }
@@ -104,6 +109,7 @@ module.exports = {
   deleteRestaurant: deleteRestaurant,
   getResults: getResults,
   addPlace: addPlace,
-  loadSaved: loadSaved,
+  saveLocal: saveLocal,
+  returnData: returnData,
   deletePlace: deletePlace
 }
