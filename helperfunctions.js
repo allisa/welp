@@ -16,8 +16,9 @@ const getResults = (req, res) => {
   let lat = `&latitude=${req.query.lat}`;
   let long = `&longitude=${req.query.long}`;
   let limit = `&limit=4`;
+  let price = `&price=${req.query.price}`;
 
-  superagent.get(`https://api.yelp.com/v3/businesses/search?${query}${cat}${radius}${long}${lat}${limit}`)
+  superagent.get(`https://api.yelp.com/v3/businesses/search?${query}${cat}${radius}${long}${lat}${limit}${price}`)
     .set({ 'Authorization': 'Bearer ' + process.env.YELP_KEY })
     .end((err, apiResponse) => {
       if (err) {
