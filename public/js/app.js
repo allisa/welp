@@ -15,11 +15,11 @@ $(document).ready(() => {
     $long.val(position.coords.longitude);
   });
 
-  // $.ajax({
-  //   url: '/'
-  // })
-
   $('#clearAll').on('click', () => {
-    localStorage.set('key', JSON.stringify(arr));
+    localStorage.clear();
+  });
+
+  $('#add').on('click', function () {
+    JSON.parse(localStorage.get('yelp_ids') || []).push($('#add').val());
   });
 });

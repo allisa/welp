@@ -53,7 +53,7 @@ const deleteRestaurant = (req, res) => {
 }
 
 const addPlace = (req, res) => {
-  let SQL = 'INSERT INTO restaurants (yelp_id, name, category, rating, address, yelp_url, image_url, latitude, longitude) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING id;'
+  let SQL = 'INSERT INTO restaurants (yelp_id, name, category, rating, address, yelp_url, image_url, latitude, longitude) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *;'
 
   let values = [
     req.body.yelp_id,
@@ -70,7 +70,7 @@ const addPlace = (req, res) => {
     if (err) {
       res.render('pages/error', { err: err });
     } else {
-      res.redirect('/pages/saved');
+      res.render('pages/saved', { results: result.rows });
     }
   });
 }

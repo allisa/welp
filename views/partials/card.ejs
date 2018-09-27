@@ -28,12 +28,12 @@
     <input type="hidden" name="image_url" value="<%= place.image_url %>" />
     <input type="hidden" name="lat" value="<%= place.lat %>" />
     <input type="hidden" name="long" value="<%= place.long %>" />
-    <button>Let's go here!</button>
+    <button id="add" value="add_id">Let's go here!</button>
     <% } else { %>
     <form method="POST" action="/place">
       <input type="hidden" name="_method" value="DELETE" />
       <input type="hidden" name="id" value="<%= place.id %>" />
-      <button>Remove from Saved</button>
+      <button id="remove" value="<%= place.id %>">Remove from Saved</button>
       <% } %>
     </form>
 </div>
