@@ -1,7 +1,17 @@
+:root {
+  --neutral-background: #969696;
+  --background: #F23D20;
+  --primary: #F9660D;
+  --secondary: rgb(44, 82, 71);
+  --secondary-darker:  #264A81;
+  --neutral: rgb(13, 146, 22);
+}
+
 body {
-  background-color: powderblue;
+  background-color: var(--neutral-background);
   max-width: 960px;
   width: 85%;
   margin: 0 auto;
   text-align: center;
+  font-family: 'Open Sans', sans-serif;
 }
