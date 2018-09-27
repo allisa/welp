@@ -53,7 +53,7 @@ const deleteRestaurant = (req, res) => {
 }
 
 const addPlace = (req, res) => {
-  let SQL = 'INSERT INTO restaurants (yelp_id, name, category, rating, address, yelp_url, image_url, latitude, longitude) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *;'
+  let SQL = 'INSERT INTO restaurants (yelp_id, name, category, rating, address, yelp_url, image_url, latitude, longitude) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING id;'
 
   let values = [
     req.body.yelp_id,
@@ -70,21 +70,39 @@ const addPlace = (req, res) => {
     if (err) {
       res.render('pages/error', { err: err });
     } else {
-      res.render('pages/saved', { results: result.rows });
+      res.redirect(`pages/saved/${result.rows[0].id}?save=true`);
     }
   });
 }
 
 const loadSaved = (req, res) => {
-  let SQL = 'SELECT * FROM restaurants;';
-  client.query(SQL, (err, result) => {
+  console.log('hits loadSaved');
+  // let SQL = 'SELECT * FROM restaurants;';
+  // client.query(SQL, (err, result) => {
+  //   if (err) {
+  //     res.render('pages/error', { err: err });
+  //   } else {
+  //     res.render('pages/saved', { results: result.rows });
+  //   }
+  // });
+};
+
+const saveLocal = (req, res) => {
+  res.render('pages/saved', { save: req.query.save });
+}
+
+const returnData = (req, res) => {
+  let SQL = 'SELECT * FROM restaurants WHERE id=$1;';
+  let values = [req.params.id];
+  client.query(SQL, values, (err, result) => {
+    console.log('queried');
     if (err) {
       res.render('pages/error', { err: err });
     } else {
-      res.render('pages/saved', { results: result.rows });
+      res.send(result.rows[0]);
     }
-  });
-};
+  })
+}
 
 const deletePlace = (req, res) => {
   let SQL = 'DELETE FROM restaurants WHERE id = $1;'
@@ -105,5 +123,8 @@ module.exports = {
   getResults: getResults,
   addPlace: addPlace,
   loadSaved: loadSaved,
+  saveLocal: saveLocal,
+  // loadAll: loadAll,
+  returnData: returnData,
   deletePlace: deletePlace
 }

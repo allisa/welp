@@ -28,7 +28,7 @@
     <input type="hidden" name="image_url" value="<%= place.image_url %>" />
     <input type="hidden" name="latitude" value="<%= place.lat %>" />
     <input type="hidden" name="longitude" value="<%= place.long %>" />
-    <button name="add" value="<%=place.id%>">Let's go here!</button>
+    <button name="add">Let's go here!</button>
     <% } else { %>
     <form method="POST" action="/place">
       <input type="hidden" name="_method" value="DELETE" />
