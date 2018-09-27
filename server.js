@@ -32,8 +32,7 @@ app.get('/about', (req, res) => res.render('pages/about'));
 app.get('/place/:id', helperFunction.returnData);
 app.delete('/place', helperFunction.deletePlace);
 app.post('/place', helperFunction.addPlace);
-// app.get('/load', helperFunction.loadAll);
-app.get('/pages/saved', helperFunction.loadSaved);
+app.get('/pages/saved', (req, res) => res.redirect('/pages/saved/id'));
 app.get('/pages/saved/:id', helperFunction.saveLocal);
 
 

@@ -75,18 +75,6 @@ const addPlace = (req, res) => {
   });
 }
 
-const loadSaved = (req, res) => {
-  console.log('hits loadSaved');
-  // let SQL = 'SELECT * FROM restaurants;';
-  // client.query(SQL, (err, result) => {
-  //   if (err) {
-  //     res.render('pages/error', { err: err });
-  //   } else {
-  //     res.render('pages/saved', { results: result.rows });
-  //   }
-  // });
-};
-
 const saveLocal = (req, res) => {
   res.render('pages/saved', { save: req.query.save });
 }
@@ -121,9 +109,7 @@ module.exports = {
   deleteRestaurant: deleteRestaurant,
   getResults: getResults,
   addPlace: addPlace,
-  loadSaved: loadSaved,
   saveLocal: saveLocal,
-  // loadAll: loadAll,
   returnData: returnData,
   deletePlace: deletePlace
 }

@@ -29,12 +29,7 @@
     <input type="hidden" name="latitude" value="<%= place.lat %>" />
     <input type="hidden" name="longitude" value="<%= place.long %>" />
     <button name="add">Let's go here!</button>
-    <% } else { %>
-    <form method="POST" action="/place">
-      <input type="hidden" name="_method" value="DELETE" />
-      <input type="hidden" name="id" value="<%= place.id %>" />
-      <button id="remove" value="<%= place.id %>">Remove from Saved</button>
-      <% } %>
-    </form>
+    <% } %>
+  </form>
 </div>
 <% }) %>

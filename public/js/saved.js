@@ -3,8 +3,11 @@
 $(document).ready(() => {
   let ls = JSON.parse(localStorage.getItem('yelp_ids')) || [];
 
+  let urlParams = new URLSearchParams(window.location.search);
+  let save = urlParams.get('save');
+
   let id = window.location.pathname.split('/')[3];
-  if (id && !ls.includes(id)) {
+  if (!!save && id && !ls.includes(id)) {
     ls.push(id);
   }
 
@@ -35,7 +38,6 @@ $(document).ready(() => {
         $('button').on('click', function () {
           let removeID = $(this).val();
           ls.splice(ls.indexOf(removeID.toString()), 1);
-          console.log(ls);
           localStorage.setItem('yelp_ids', JSON.stringify(ls));
         });
       }
