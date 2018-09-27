@@ -1,32 +1,89 @@
-<%- include('../partials/header', {title: 'About Us'}) %>
-<h3>Allisa LeBeuf</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nunc diam, dignissim id laoreet ac, bibendum sit
-  amet enim. Ut vitae tellus id nunc ullamcorper suscipit sed eu diam. Sed pretium neque non tortor semper, sed
-  sollicitudin mi vestibulum. Nam sagittis ultricies quam id ultrices. Sed eleifend sapien et rhoncus blandit. Proin et
-  eleifend elit. Integer non urna at ipsum rhoncus semper. Cras suscipit diam ac laoreet cursus. Curabitur ornare urna
-  non nisi gravida tincidunt. Nam nec leo in nisi consequat hendrerit interdum id tellus. Nulla vulputate mauris et
-  nisi mattis, eget laoreet mi mollis. Nunc a nibh turpis.</p>
-
-<h3>Andrew Powers</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nunc diam, dignissim id laoreet ac, bibendum sit
-  amet enim. Ut vitae tellus id nunc ullamcorper suscipit sed eu diam. Sed pretium neque non tortor semper, sed
-  sollicitudin mi vestibulum. Nam sagittis ultricies quam id ultrices. Sed eleifend sapien et rhoncus blandit. Proin et
-  eleifend elit. Integer non urna at ipsum rhoncus semper. Cras suscipit diam ac laoreet cursus. Curabitur ornare urna
-  non nisi gravida tincidunt. Nam nec leo in nisi consequat hendrerit interdum id tellus. Nulla vulputate mauris et
-  nisi mattis, eget laoreet mi mollis. Nunc a nibh turpis.</p>
-
-<h3>Jimmy Nguyen</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nunc diam, dignissim id laoreet ac, bibendum sit
-  amet enim. Ut vitae tellus id nunc ullamcorper suscipit sed eu diam. Sed pretium neque non tortor semper, sed
-  sollicitudin mi vestibulum. Nam sagittis ultricies quam id ultrices. Sed eleifend sapien et rhoncus blandit. Proin et
-  eleifend elit. Integer non urna at ipsum rhoncus semper. Cras suscipit diam ac laoreet cursus. Curabitur ornare urna
-  non nisi gravida tincidunt. Nam nec leo in nisi consequat hendrerit interdum id tellus. Nulla vulputate mauris et
-  nisi mattis, eget laoreet mi mollis. Nunc a nibh turpis.</p>
-
-<h3>Kris Riedman</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nunc diam, dignissim id laoreet ac, bibendum sit
-  amet enim. Ut vitae tellus id nunc ullamcorper suscipit sed eu diam. Sed pretium neque non tortor semper, sed
-  sollicitudin mi vestibulum. Nam sagittis ultricies quam id ultrices. Sed eleifend sapien et rhoncus blandit. Proin et
-  eleifend elit. Integer non urna at ipsum rhoncus semper. Cras suscipit diam ac laoreet cursus. Curabitur ornare urna
-  non nisi gravida tincidunt. Nam nec leo in nisi consequat hendrerit interdum id tellus. Nulla vulputate mauris et
-  nisi mattis, eget laoreet mi mollis. Nunc a nibh turpis.</p>
+<!DOCTYPE html>
+<html> 
+  <body>
+  <%- include('../partials/head') %>
+  <%- include('../partials/header', {title: 'About Us'}) %>
+  <div class="cardContainer">
+  <div class="card">
+      <h3>Jimmy Nyguen</h3>
+      <img class ="aboutImg" src="https://storage.googleapis.com/zopnow-static/images/products/320/britannia-treat-jim-jam-v-150-g.png" alt="" />
+      <p>Category: The baddest 
+      </p>
+      <p>Rating: 4
+      </p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nunc diam, dignissim id laoreet ac, bibendum sit
+        amet enim. Ut vitae tellus id nunc ullamcorper suscipit sed eu diam. Sed pretium neque non tortor semper, sed
+        sollicitudin mi vestibulum. Nam sagittis ultricies quam id ultrices. Sed eleifend sapien et rhoncus blandit. Proin et
+        eleifend elit. Integer non urna at ipsum rhoncus semper. Cras suscipit diam ac laoreet cursus. Curabitur ornare urna
+        non nisi gravida tincidunt. Nam nec leo in nisi consequat hendrerit interdum id tellus. Nulla vulputate mauris et
+        nisi mattis, eget laoreet mi mollis. Nunc a nibh turpis.</p>
+          <p><a href="">External Link</a></p>
+      <form method="POST" action="/place">
+        <button value="Add">Let's go here!</button>
+      </form>
+    </div>
+    
+    
+      <div class="card">
+          <h3>Allisa LeBeuf</h3>
+          <img src="https://s3.amazonaws.com/lowres.cartoonstock.com/politics-king-ruler-leader-worship-worshipping-rde1521_low.jpg" alt="../img/allisa.jpg" />
+        <p>Category: #Winning
+        </p>
+        <p>Rating: 4 
+        </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nunc diam, dignissim id laoreet ac, bibendum sit
+          amet enim. Ut vitae tellus id nunc ullamcorper suscipit sed eu diam. Sed pretium neque non tortor semper, sed
+          sollicitudin mi vestibulum. Nam sagittis ultricies quam id ultrices. Sed eleifend sapien et rhoncus blandit. Proin et
+          eleifend elit. Integer non urna at ipsum rhoncus semper. Cras suscipit diam ac laoreet cursus. Curabitur ornare urna
+          non nisi gravida tincidunt. Nam nec leo in nisi consequat hendrerit interdum id tellus. Nulla vulputate mauris et
+          nisi mattis, eget laoreet mi mollis. Nunc a nibh turpis.</p>
+              <p><a href="">External Link</a></p>
+        <form method="POST" action="/place">
+          <button value="Add">Let's go here!</button>
+        </form>
+      </div>
+    
+    
+    
+      <div class="card">
+          <h3>Kris Riedman</h3>
+          <img src="https://i.ytimg.com/vi/sKyZ4_jNyjg/maxresdefault.jpg" alt="image" />
+        <p>Category: Fredo Baggins
+        </p>
+        <p>Rating:
+        </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nunc diam, dignissim id laoreet ac, bibendum sit
+            amet enim. Ut vitae tellus id nunc ullamcorper suscipit sed eu diam. Sed pretium neque non tortor semper, sed
+            sollicitudin mi vestibulum. Nam sagittis ultricies quam id ultrices. Sed eleifend sapien et rhoncus blandit. Proin et
+            eleifend elit. Integer non urna at ipsum rhoncus semper. Cras suscipit diam ac laoreet cursus. Curabitur ornare urna
+            non nisi gravida tincidunt. Nam nec leo in nisi consequat hendrerit interdum id tellus. Nulla vulputate mauris et
+            nisi mattis, eget laoreet mi mollis. Nunc a nibh turpis.</p>
+    
+      <p><a href="">External Link</a></p>
+        <form method="POST" action="https://www.linkedin.com/in/jimmyndev/">
+          <button type="sumbit">LinkedIn</button>
+        </form>
+      </div>
+    
+    
+      <div class="card">
+          <h3>Andrew Powers</h3>
+          <img src="http://mbkinc.org/wp-content/uploads/2017/10/paypal-donate-button-high-quality-png.png" alt="../img/AndrewPower-250x300.jpg" />
+        <p>Category: The Other Guy 
+        </p>
+        <p>Rating: 9+
+        </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nunc diam, dignissim id laoreet ac, bibendum sit
+          amet enim. Ut vitae tellus id nunc ullamcorper suscipit sed eu diam. Sed pretium neque non tortor semper, sed
+          sollicitudin mi vestibulum. Nam sagittis ultricies quam id ultrices. Sed eleifend sapien et rhoncus blandit. Proin et
+          eleifend elit. Integer non urna at ipsum rhoncus semper. Cras suscipit diam ac laoreet cursus. Curabitur ornare urna
+          non nisi gravida tincidunt. Nam nec leo in nisi consequat hendrerit interdum id tellus. Nulla vulputate mauris et
+          nisi mattis, eget laoreet mi mollis. Nunc a nibh turpis.</p>
+          <p><a href="">External Link</a></p>
+        <form method="POST" action="https://www.linkedin.com/in/andrew-powers-81995a43/">
+          <button value="sumbit">LinkedIn!</button>
+        </form>
+      </div>
+    </div>
+    </body>
+  </html>
