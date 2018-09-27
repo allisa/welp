@@ -11,7 +11,7 @@ client.on('pages/error', error => console.error(error));
 
 const getResults = (req, res) => {
   let query = 'term=food';
-  let cat = `&categories=${req.query.cuisine.toLowerCase()}`
+  let cat = `&categories=${req.query.cuisine.toLowerCase()}`;
   let radius = `&radius=${req.query.radius * 1609}`;
   let lat = `&latitude=${req.query.lat}`;
   let long = `&longitude=${req.query.long}`;
@@ -54,8 +54,7 @@ const deleteRestaurant = (req, res) => {
 }
 
 const addPlace = (req, res) => {
-  let SQL = 'INSERT INTO restaurants (yelp_id, name, category, rating, address, yelp_url, image_url, latitude, longitude) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING id;'
-
+  let SQL = 'INSERT INTO restaurants (yelp_id, name, category, rating, address, yelp_url, image_url, latitude, longitude) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING id;';
   let values = [
     req.body.yelp_id,
     req.body.name,
@@ -89,14 +88,12 @@ const returnData = (req, res) => {
     } else {
       res.send(result.rows[0]);
     }
-  })
+  });
 }
 
 const deletePlace = (req, res) => {
-  let SQL = 'DELETE FROM restaurants WHERE id = $1;'
-  let values = [
-    req.body.id
-  ];
+  let SQL = 'DELETE FROM restaurants WHERE id = $1;';
+  let values = [req.body.id];
   client.query(SQL, values, (err, result) => {
     if (err) {
       res.render('pages/error', { err: err });
