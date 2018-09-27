@@ -18,8 +18,4 @@ $(document).ready(() => {
   $('#clearAll').on('click', () => {
     localStorage.clear();
   });
-
-  $('#add').on('click', function () {
-    JSON.parse(localStorage.get('yelp_ids') || []).push($('#add').val());
-  });
 });
