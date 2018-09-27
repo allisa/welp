@@ -25,7 +25,6 @@ $(document).ready(() => {
           .append($('<input>', { type: 'hidden', name: 'id', value: data.id }))
           .append(button);
 
-
         let $newCard = $('<div>', { class: 'card' })
           .append($('<h3>').text(data.name))
           .append($('<img>', { src: data.image_url, alt: 'image' }))
@@ -34,6 +33,7 @@ $(document).ready(() => {
           .append($('<address>').text('Address: ' + data.address))
           .append($('<p>').append($a))
           .append($form);
+
         $('.cardContainer').append($newCard);
         $('button').on('click', function () {
           let removeID = $(this).val();
