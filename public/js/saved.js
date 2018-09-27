@@ -4,38 +4,42 @@ $(document).ready(() => {
   let ls = JSON.parse(localStorage.getItem('yelp_ids')) || [];
 
   let id = window.location.pathname.split('/')[3];
-  if (!ls.includes(id)) {
+  if (id && !ls.includes(id)) {
     ls.push(id);
   }
-
-  localStorage.setItem('yelp_ids', JSON.stringify(ls));
 
   ls.forEach(place => {
     $.ajax({
       url: `/place/${place}`,
       method: 'GET',
       success: data => {
-        let newCard = $('<div>', { class: 'card' }).append($('<h3>').text(data.name));
-        $('.card-container').append(newCard);
+
+        let $a = $('<a>', { href: data.yelp_url, target: '_blank' }).text('More Details...');
+        let button = $('<button>', { id: 'remove', value: data.id }).text(`Never Again!`);
+
+        let $form = $('<form>', { method: 'POST', action: '/place' })
+          .append($('<input>', { type: 'hidden', name: '_method', value: 'DELETE' }))
+          .append($('<input>', { type: 'hidden', name: 'id', value: data.id }))
+          .append(button);
+
+
+        let $newCard = $('<div>', { class: 'card' })
+          .append($('<h3>').text(data.name))
+          .append($('<img>', { src: data.image_url, alt: 'image' }))
+          .append($('<p>').text('Specialties: ' + data.category))
+          .append($('<p>').text('Rating: ' + data.rating))
+          .append($('<address>').text('Address: ' + data.address))
+          .append($('<p>').append($a))
+          .append($form);
+        $('.cardContainer').append($newCard);
+        $('button').on('click', function () {
+          let removeID = $(this).val();
+          ls.splice(ls.indexOf(removeID.toString()), 1);
+          console.log(ls);
+          localStorage.setItem('yelp_ids', JSON.stringify(ls));
+        });
       }
     })
   });
+  localStorage.setItem('yelp_ids', JSON.stringify(ls));
 });
-
-{/* <h3>
-<%= place.name %>
-</h3>
-<img src="<%= place.image_url %>" alt="image" />
-<p>Specialties:
-<%= place.categories %>
-</p>
-<p>Rating:
-<%= place.rating %>
-</p>
-<p>Open Now:
-<%= place.hours %>
-</p>
-<address>
-<%= place.address %>
-</address>
-<p><a href="<%= place.yelp_url %>">External Link</a></p> */}

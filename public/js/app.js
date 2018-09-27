@@ -14,8 +14,4 @@ $(document).ready(() => {
     $lat.val(position.coords.latitude);
     $long.val(position.coords.longitude);
   });
-
-  $('#clearAll').on('click', () => {
-    localStorage.clear();
-  });
 });

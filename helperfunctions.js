@@ -95,7 +95,6 @@ const returnData = (req, res) => {
   let SQL = 'SELECT * FROM restaurants WHERE id=$1;';
   let values = [req.params.id];
   client.query(SQL, values, (err, result) => {
-    console.log('queried');
     if (err) {
       res.render('pages/error', { err: err });
     } else {
@@ -113,7 +112,7 @@ const deletePlace = (req, res) => {
     if (err) {
       res.render('pages/error', { err: err });
     } else {
-      res.render('pages/saved', { results: result.rows });
+      res.render('pages/saved');
     }
   });
 }
