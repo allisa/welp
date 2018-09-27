@@ -28,19 +28,16 @@ app.get('/', (req, res) => res.redirect('/search'));
 app.get('/results', helperFunction.getResults);
 app.get('/search', (req, res) => res.render('index'));
 app.get('/about', (req, res) => res.render('pages/about'));
-
 app.get('/place/:id', helperFunction.returnData);
 app.delete('/place', helperFunction.deletePlace);
 app.post('/place', helperFunction.addPlace);
 app.get('/pages/saved', (req, res) => res.redirect('/pages/saved/id'));
 app.get('/pages/saved/:id', helperFunction.saveLocal);
 
-
 app.get('*', (req, res) => {
   res.statusCode = 404;
-  res.send('404, page not found.')
-})
-
+  res.send('404, page not found.');
+});
 
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}!`);
