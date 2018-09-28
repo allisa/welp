@@ -176,6 +176,26 @@ p {
     width: 90%;
   }
 
+  .jimmy {
+    background: url('/images/jimmy_food_m.jpg') no-repeat center;
+    background-size: contain; 
+  }
+  
+  .allisa{
+    background: url('/images/allisa_food_m.jpg') no-repeat center;
+    background-size: contain;
+  }
+  
+  .kris {
+    background: url('/images/kris_food_m.jpg') no-repeat center;
+    background-size: contain;
+  }
+  
+  .andrew {
+    background: url('/images/andrew_food_m.jpg') no-repeat center;
+    background-size: contain;
+  }
+
   nav {
     margin-top: -27px;
   }
