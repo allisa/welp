@@ -36,7 +36,7 @@ app.get('/pages/saved/:id', helperFunction.saveLocal);
 
 app.get('*', (req, res) => {
   res.statusCode = 404;
-  res.send('404, page not found.');
+  res.render('pages/error', { err: '404, page not found.' });
 });
 
 app.listen(PORT, () => {
