@@ -4,4 +4,13 @@
   justify-content: center;
   background-color: var(--neutral-background);
   margin-top: 20px;
+  color: black;
 }
+
+.index {
+  background-color: rgba(163, 162, 162, .6);
+  max-width: 600px;
+  margin: 0 auto 50px auto;
+}
+
+

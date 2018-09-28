@@ -1,6 +1,6 @@
 :root {
-  --neutral-background: #969696;
-  --background: #F23D20;
+  --neutral-background: #e4e4e4;
+  --background: rgba(236, 14, 14, 1);
   --primary: rgb(255, 220, 64);
   --secondary: rgb(44, 82, 71);
   --secondary-darker:  rgb(110, 140, 185);
@@ -8,12 +8,11 @@
 }
 
 body {
-  background-color: var(--neutral-background);
-  max-width: 960px;
-  width: 85%;
+  background: url('../images/bg_cropped.jpg') repeat center;
+  background-size: contain;
   margin: 0 auto;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
   font-size: 2.5em;
-  color: var(--primary);
+  color: var(--background);
 }
