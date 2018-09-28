@@ -155,4 +155,8 @@ nav a {
   .card {
     width: 85%;
   }
+  
+  .searchForms{
+    width: 95%;
+  }
 }
