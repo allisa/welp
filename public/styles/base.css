@@ -9,8 +9,6 @@
 }
 
 body {
-  background: url('../images/bg_cropped.jpg') repeat center;
-  background-size: contain;
   margin: 0 auto;
   text-align: center;
   font-family: 'Open Sans', sans-serif;

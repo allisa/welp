@@ -3,7 +3,7 @@
 <%- include('partials/head') %>
 
 <body>
-  <%- include('partials/header', {title: 'Welp'}) %>
+  <%- include('partials/header', {title: 'Welp', classes: 'index_background'}) %>
   <div class="cardContainer index">
     <section class="searchForms">
       <form method="GET" action="/results">
@@ -32,6 +32,7 @@
         <input type="hidden" name="search" id="search" value="true" />
       </form>
     </section>
+  </div>
   </div>
   <%- include('partials/footer') %>
   <script src="js/app.js"></script>
