@@ -5,6 +5,16 @@
   margin: 20px;
   border: 2px solid var(--secondary);
   background-color: var(--background);
+  box-shadow: 10px 10px var(--secondary-darker);
+}
+
+.results .card:first-child{
+  width: 89%;
+  animation: color_change 1s infinite alternate;
+}
+
+.about-us {
+  width: 100%;
 }
 
 img {
@@ -54,8 +64,11 @@ a:hover {
 h1 {
   text-align: center;
   font-family: 'Lobster', cursive;
-  font-size: 3em;
-  
+  font-size: 3em; 
+}
+
+p {
+  font-size: .65em;
 }
 
 @media (max-width: 600px) {
