@@ -4,7 +4,7 @@
   justify-content: center;
   background-color: var(--neutral-background);
   margin-top: 20px;
-  color: black;
+  color: var(--text-color);
 }
 
 .index {

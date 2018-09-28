@@ -1,6 +1,7 @@
 :root {
   --neutral-background: #e4e4e4;
   --background: rgba(236, 14, 14, 1);
+  --text-color: black;
   --primary: rgb(255, 220, 64);
   --secondary: rgb(44, 82, 71);
   --secondary-darker:  rgb(110, 140, 185);
@@ -14,5 +15,5 @@ body {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
   font-size: 2.5em;
-  color: var(--background);
+  color: var(--text-color);
 }
