@@ -18,7 +18,7 @@ $(document).ready(() => {
       success: data => {
 
         let $a = $('<a>', { href: data.yelp_url, target: '_blank' }).text('More Details...');
-        let button = $('<button>', { value: data.id }).text(`Never Again!`);
+        let button = $('<button>', { value: data.id, class: 'add_btn' });
 
         let $form = $('<form>', { method: 'POST', action: '/place' })
           .append($('<input>', { type: 'hidden', name: '_method', value: 'DELETE' }))

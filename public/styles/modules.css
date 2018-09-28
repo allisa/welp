@@ -48,11 +48,30 @@ button {
 
 }
 
+.add_btn{
+  background: url('../images/delete_btn.png') no-repeat center;
+  background-size: 70px;
+  filter: opacity(0.7);
+  height: 70px;
+  width: 70px;
+  border: none;
+}
+
+.delete_btn{
+  background: url('../images/add_btn.png') no-repeat center;
+  background-size: 70px;
+  filter: opacity(0.7);
+  height: 70px;
+  width: 70px;
+  border: none;
+}
+
 .search-button {
   background: url('../images/search_btn.png') no-repeat center;
-  background-size: 100px;
-  height: 100px;
-  width: 100px;
+  background-size: 70px;
+  filter: opacity(0.7);
+  height: 70px;
+  width: 70px;
   border: none;
   /* margin-top: 5px; */
 }
@@ -62,6 +81,10 @@ button {
   width: 100%;
   margin: 0;
   height: 60px;
+}
+
+.rendered{
+  background-size: cover;
 }
 
 a {
@@ -86,6 +109,10 @@ h1 {
 
 p {
   font-size: .65em;
+}
+
+.count {
+  font-weight: bolder;
 }
 
 nav {
