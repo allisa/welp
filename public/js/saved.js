@@ -18,7 +18,7 @@ $(document).ready(() => {
       success: data => {
 
         let $a = $('<a>', { href: data.yelp_url, target: '_blank' }).text('More Details...');
-        let button = $('<button>', { id: 'remove', value: data.id }).text(`Never Again!`);
+        let button = $('<button>', { value: data.id }).text(`Never Again!`);
 
         let $form = $('<form>', { method: 'POST', action: '/place' })
           .append($('<input>', { type: 'hidden', name: '_method', value: 'DELETE' }))
@@ -35,7 +35,7 @@ $(document).ready(() => {
           .append($form);
 
         $('.cardContainer').append($newCard);
-        $('button').on('click', function () {
+        button.on('click', function () {
           let removeID = $(this).val();
           ls.splice(ls.indexOf(removeID.toString()), 1);
           localStorage.setItem('yelp_ids', JSON.stringify(ls));
