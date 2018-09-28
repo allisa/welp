@@ -1,14 +1,15 @@
 'use strict';
 
+//Setup server modules
 const pg = require('pg');
 require('dotenv').config();
 const superagent = require('superagent');
-
 const conString = process.env.DATABASE_URL;
 const client = new pg.Client(conString);
 client.connect();
 client.on('pages/error', error => console.error(error));
 
+//Querying and receiving results from API
 const getResults = (req, res) => {
   let query = 'term=food';
   let cat = `&categories=${req.query.cuisine.toLowerCase()}`;
@@ -45,18 +46,7 @@ const getResults = (req, res) => {
     });
 }
 
-const deleteRestaurant = (req, res) => {
-  let SQL = 'DELETE FROM resaurants WHERE id = $1;';
-  let values = [req.params.id];
-  client.query(SQL, values, (err, result) => {
-    if (err) {
-      res.render('pages/error', { err: err });
-    } else {
-      res.redirect('/pages/saved');
-    }
-  });
-}
-
+//Add restaurant to favorite restaurants
 const addPlace = (req, res) => {
   let SQL = 'INSERT INTO restaurants (yelp_id, name, category, rating, address, yelp_url, image_url, latitude, longitude) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING id;';
   let values = [
@@ -79,10 +69,12 @@ const addPlace = (req, res) => {
   });
 }
 
+//Value passed to partial in order to save to local storage
 const saveLocal = (req, res) => {
   res.render('pages/saved', { save: req.query.save });
 }
 
+//Query to database to get specific database entry
 const returnData = (req, res) => {
   let SQL = 'SELECT * FROM restaurants WHERE id=$1;';
   let values = [req.params.id];
@@ -95,6 +87,7 @@ const returnData = (req, res) => {
   });
 }
 
+//Delete restaurant from favorite places
 const deletePlace = (req, res) => {
   let SQL = 'DELETE FROM restaurants WHERE id = $1;';
   let values = [req.body.id];
@@ -107,8 +100,8 @@ const deletePlace = (req, res) => {
   });
 }
 
+//Exporting helper functions
 module.exports = {
-  deleteRestaurant: deleteRestaurant,
   getResults: getResults,
   addPlace: addPlace,
   saveLocal: saveLocal,
