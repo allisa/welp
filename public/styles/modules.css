@@ -118,8 +118,9 @@ address {
   background-size: contain;
 }
 
-.jimmy, .allisa, .kris, .andrew{
-  border-radius: 25px;
+.carlos {
+  background: url('/images/carlos_food.jpg') no-repeat center;
+  background-size: contain;
 }
 
 .linked_in{
@@ -196,6 +197,10 @@ p {
     background-size: contain;
   }
 
+  .carlos {
+    background: url('/images/carlos_food_m.jpg') no-repeat center;
+    background-size: contain;
+  }
   nav {
     margin-top: -27px;
   }
