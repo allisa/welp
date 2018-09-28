@@ -1,64 +1,75 @@
 <!DOCTYPE html>
 <html>
+<%- include('../partials/head') %>
 
 <body>
-  <%- include('../partials/head') %>
-  <%- include('../partials/header', {title: 'About Us'}) %>
+  <%- include('../partials/header', {title: 'About Us', classes: 'all_backgrounds'}) %>
   <div class="cardContainer">
-    <div class="card about-us">
-      <h3>Jimmy Nyguen</h3>
-      <img class="aboutImg" src="https://storage.googleapis.com/zopnow-static/images/products/320/britannia-treat-jim-jam-v-150-g.png"
-        alt="aboutImg" />
-      <p>
-        Category: The baddest
-      </p>
-      <p>
-        Rating: 4
-      </p>
-      <p>
-        Jimmy is a world class competitive eater. He competes against himself. When not coding or eating, he's found
-        pretending to hike mountains or catching up on sleep. Jimmy is looking forward to building unique solutions
-        that utilizes his skillset.
-      </p>
-      <p>
-        <a href="https://www.linkedin.com/in/jimmyndev/">LinkedIn</a>
-      </p>
+    <div class="card about-us jimmy">
+      <div class="transparent">
+        <h3>Jimmy Nguyen</h3>
+        <img class="aboutImg" src="/images/jimmy.jpeg" alt="jimmy" />
+        <p>
+          Category: The baddest
+        </p>
+        <p>
+          Rating: 4
+        </p>
+        <p>
+          Jimmy is a world class competitive eater. He competes against himself. When not coding or eating, he's found
+          pretending to hike mountains or catching up on sleep. Jimmy is looking forward to building unique solutions
+          that utilizes his skillset.
+        </p>
+        <p>
+          <a href="https://www.linkedin.com/in/jimmyndev/">LinkedIn</a>
+        </p>
+      </div>
     </div>
-    <div class="card about-us">
-      <h3>Allisa LeBeuf</h3>
-      <img src="https://s3.amazonaws.com/lowres.cartoonstock.com/politics-king-ruler-leader-worship-worshipping-rde1521_low.jpg"
-        alt="../img/allisa.jpg" />
-      <p>
-        Category: #Winning
-      </p>
-      <p>
-        Rating: 4
-      </p>
-      <p>
-        Allisa is a software development engineer apprentice. She has a background in finance within non-profits and is
-        excited to make the transition into a more challenging role. In her off time, she is hanging out at in a forest
-        or on the beach with her dog.
-      </p>
-      <p><a href="https://www.linkedin.com/in/allisalebeuf">LinkedIn</a></p>
+    <div class="card about-us allisa">
+      <div class="transparent">
+        <h3>Allisa LeBeuf</h3>
+        <img src="/images/allisa.jpeg" alt="../img/allisa.jpg" />
+        <p>
+          Category: #Winning
+        </p>
+        <p>
+          Rating: 4
+        </p>
+        <p>
+          Allisa is a software development engineer apprentice. She has a background in finance within non-profits and
+          is
+          excited to make the transition into a more challenging role. In her off time, she is hanging out at in a
+          forest
+          or on the beach with her dog.
+        </p>
+        <p><a href="https://www.linkedin.com/in/allisalebeuf">LinkedIn</a></p>
+      </div>
     </div>
-    <div class="card about-us">
-      <h3>Kris Riedman</h3>
-      <img src="https://i.ytimg.com/vi/sKyZ4_jNyjg/maxresdefault.jpg" alt="image" />
-      <p>
-        Category: Fredo Baggins
-      </p>
-      <p>
-        Rating:
-      </p>
-      <p>
-        Kris is an avid gamer and Air Force Veteran. He grew up in North Dakota and the Air Force decided to send him
-        back. He follows professional football and basketball (Go Pack Go!!, Let's Go Bucks). His favorite activities
-        include playing video games, watching movies, and exploring faraway places with his wife. Fun fact: Kris has
-        spent a full six months of his life underground.
-      </p>
-      <p><a href="https://www.linkedin.com/in/kristofer-riedman-3016a0126/">LinkedIn</a></p>
+    <div class="card about-us kris">
+      <div class="transparent">
+        <h3>Kris Riedman</h3>
+        <img src="/images/kris.jpeg" alt="image" />
+        <p>
+          Category: Fredo Baggins
+        </p>
+        <p>
+          Rating:
+        </p>
+        <p>
+          Kris is an avid gamer and Air Force Veteran. He grew up in North Dakota and the Air Force decided to send
+          him
+          back. He follows professional football and basketball (Go Pack Go!!, Let's Go Bucks). His favorite
+          activities
+          include playing video games, watching movies, and exploring faraway places with his wife. Fun fact: Kris
+          has
+          spent a full six months of his life underground.
+        </p>
+        <p><a href="https://www.linkedin.com/in/kristofer-riedman-3016a0126/">LinkedIn</a></p>
+      </div>
     </div>
-    <div class="card about-us">
+  </div>
+  <div class="card about-us andrew">
+    <div class="transparent">
       <h3>Andrew Powers</h3>
       <img src="http://mbkinc.org/wp-content/uploads/2017/10/paypal-donate-button-high-quality-png.png" alt="../img/AndrewPower-250x300.jpg" />
       <p>
@@ -75,6 +86,7 @@
       </p>
       <p><a href="https://www.linkedin.com/in/andrew-powers-81995a43/">LinkedIn</a></p>
     </div>
+  </div>
   </div>
 </body>
 

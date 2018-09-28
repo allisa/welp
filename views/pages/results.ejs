@@ -3,13 +3,14 @@
 <%- include('../partials/head') %>
 
 <body>
-  <%- include('../partials/header', {title: 'Search Results'}) %>
+  <%- include('../partials/header', {title: 'Search Results', classes: 'all_backgrounds'}) %>
   <div class="cardContainer results">
     <%- include('../partials/card') %>
   </div>
-  <p>Total Eats:
+  <p class="count">Total Eats:
     <%= results.length %>
   </p>
+  </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </body>
 

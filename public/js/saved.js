@@ -18,7 +18,7 @@ $(document).ready(() => {
       success: data => {
 
         let $a = $('<a>', { href: data.yelp_url, target: '_blank' }).text('More Details...');
-        let button = $('<button>', { value: data.id }).text(`Never Again!`);
+        let button = $('<button>', { value: data.id, class: 'add_btn' });
 
         let $form = $('<form>', { method: 'POST', action: '/place' })
           .append($('<input>', { type: 'hidden', name: '_method', value: 'DELETE' }))
@@ -26,14 +26,17 @@ $(document).ready(() => {
           .append(button);
 
         let $newCard = $('<div>', { class: 'card' })
-          .append($('<h3>').text(data.name))
-          .append($('<img>', { src: data.image_url, alt: 'image' }))
-          .append($('<p>').text('Specialties: ' + data.category))
-          .append($('<p>').text('Rating: ' + data.rating))
-          .append($('<address>').text('Address: ' + data.address))
-          .append($('<p>').append($a))
-          .append($form);
+          .css('background', `url(${data.image_url}) no-repeat center`)
+          .append($('<div>', { class: 'transparent' })
+            .append($('<h3>').text(data.name))
+            .append($('<p>').text('Specialties: ' + data.category))
+            .append($('<p>').text('Rating: ' + data.rating))
+            .append($('<address>').text('Address: ' + data.address))
+            .append($('<p>').append($a))
+            .append($form));
 
+
+        // .append($('<img>', { src: data.image_url, alt: 'image' }))
         $('.cardContainer').append($newCard);
         button.on('click', function () {
           let removeID = $(this).val();

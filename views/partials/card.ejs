@@ -1,35 +1,36 @@
 <% results.forEach(place =>  {%>
-<div class="card">
-  <h3>
-    <%= place.name %>
-  </h3>
-  <img src="<%= place.image_url %>" alt="image" />
-  <p>Specialties:
-    <%= place.categories %>
-  </p>
-  <p>Rating:
-    <%= place.rating %>
-  </p>
-  <p>Open Now:
-    <%= place.hours %>
-  </p>
-  <address>
-    <%= place.address %>
-  </address>
-  <p><a href="<%= place.yelp_url %>">External Link</a></p>
-  <% if (!!search) { %>
-  <form method="POST" action="/place">
-    <input type="hidden" name="yelp_id" value="<%= place.yelp_id %>" />
-    <input type="hidden" name="name" value="<%= place.name %>" />
-    <input type="hidden" name="category" value="<%= place.categories %>" />
-    <input type="hidden" name="rating" value="<%= place.rating %>" />
-    <input type="hidden" name="address" value="<%= place.address %>" />
-    <input type="hidden" name="yelp_url" value="<%= place.yelp_url %>" />
-    <input type="hidden" name="image_url" value="<%= place.image_url %>" />
-    <input type="hidden" name="latitude" value="<%= place.lat %>" />
-    <input type="hidden" name="longitude" value="<%= place.long %>" />
-    <button name="add">Let's go here!</button>
-    <% } %>
-  </form>
+<div class="card rendered" style="background: url(<%= place.image_url %>) no-repeat center">
+  <div class='transparent'>
+    <h3>
+      <%= place.name %>
+    </h3>
+    <p>Specialties:
+      <%= place.categories %>
+    </p>
+    <p>Rating:
+      <%= place.rating %>
+    </p>
+    <p>Open Now:
+      <%= place.hours %>
+    </p>
+    <address>
+      <%= place.address %>
+    </address>
+    <p><a href="<%= place.yelp_url %>">More details...</a></p>
+    <% if (!!search) { %>
+    <form method="POST" action="/place">
+      <input type="hidden" name="yelp_id" value="<%= place.yelp_id %>" />
+      <input type="hidden" name="name" value="<%= place.name %>" />
+      <input type="hidden" name="category" value="<%= place.categories %>" />
+      <input type="hidden" name="rating" value="<%= place.rating %>" />
+      <input type="hidden" name="address" value="<%= place.address %>" />
+      <input type="hidden" name="yelp_url" value="<%= place.yelp_url %>" />
+      <input type="hidden" name="image_url" value="<%= place.image_url %>" />
+      <input type="hidden" name="latitude" value="<%= place.lat %>" />
+      <input type="hidden" name="longitude" value="<%= place.long %>" />
+      <button name="add" class="delete_btn"></button>
+      <% } %>
+    </form>
+  </div>
 </div>
 <% }) %>

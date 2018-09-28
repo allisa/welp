@@ -3,8 +3,8 @@
 <%- include('partials/head') %>
 
 <body>
-  <%- include('partials/header', {title: 'Welp'}) %>
-  <div class="cardContainer">
+  <%- include('partials/header', {title: 'Welp', classes: 'index_background'}) %>
+  <div class="cardContainer index">
     <section class="searchForms">
       <form method="GET" action="/results">
         <label for="cuisine">Cuisine: </label>
@@ -26,12 +26,13 @@
             $$$$
           </option>
         </select>
-        <button name="submit" class="search-button">LET'S EAT!</button>
+        <button name="submit" class="search-button"></button>
         <input type="hidden" name="lat" id="lat" />
         <input type="hidden" name="long" id="long" />
         <input type="hidden" name="search" id="search" value="true" />
       </form>
     </section>
+  </div>
   </div>
   <%- include('partials/footer') %>
   <script src="js/app.js"></script>
