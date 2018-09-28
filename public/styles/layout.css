@@ -35,7 +35,7 @@
   min-height: 780px;
 }
 
-.favorite_backgrounds{
+.stretch_backgrounds{
   background: url('../images/bg_cropped.jpg') no-repeat top center;
   background-size: cover;
   min-height: 780px;
