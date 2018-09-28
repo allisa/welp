@@ -35,6 +35,12 @@
   min-height: 780px;
 }
 
+.favorite_backgrounds{
+  background: url('../images/bg_cropped.jpg') no-repeat top center;
+  background-size: cover;
+  min-height: 780px;
+}
+
 @media (max-width: 600px) {
   
   .all_backgrounds{
