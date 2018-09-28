@@ -10,6 +10,7 @@
 
 h3 {
   margin: 0px;
+  padding: 20px
 }
 
 .transparent {
@@ -73,7 +74,6 @@ button {
   height: 70px;
   width: 70px;
   border: none;
-  /* margin-top: 5px; */
 }
 
 .search-input, select {
@@ -85,6 +85,25 @@ button {
 
 .rendered{
   background-size: cover;
+}
+
+.jimmy {
+  background: url('/images/jimmy_food.jpg') no-repeat center;
+  background-size: contain; 
+}
+
+.allisa{
+  background: url('/images/allisa_food.jpg') no-repeat center;
+  background-size: contain;
+}
+
+.kris {
+  background: url(https://i.ytimg.com/vi/sKyZ4_jNyjg/maxresdefault.jpg) no-repeat center;
+  background-size: contain;
+}
+
+.andrew {
+  background: url(http://mbkinc.org/wp-content/uploads/2017/10/paypal-donate-button-high-quality-png.png) no-repeat center;
 }
 
 a {
@@ -104,7 +123,6 @@ h1 {
   font-family: 'Lobster', cursive;
   font-size: 3em;
   margin: 0px;
-  /* color: red; */
 }
 
 p {
