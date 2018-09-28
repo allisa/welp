@@ -1,7 +1,7 @@
 
 .card {
   width: 40%;
-  padding: 0px;
+  padding: 10px;
   margin: 20px;
   border: 2px solid var(--secondary);
   background-color: var(--background);
@@ -16,7 +16,7 @@ h3 {
 .transparent {
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, .5)
+  background-color: rgba(255, 255, 255, .5);
 }
 
 .results .card:first-child{
@@ -49,6 +49,11 @@ button {
 
 }
 
+address {
+  font-size: .6em;
+  padding: 0px 15px
+}
+
 .add_btn{
   background: url('../images/delete_btn.png') no-repeat center;
   background-size: 70px;
@@ -78,7 +83,7 @@ button {
 
 .search-input, select {
   min-width: 300px;
-  width: 100%;
+  width: 98%;
   margin: 0;
   height: 60px;
 }
@@ -104,6 +109,11 @@ button {
 
 .andrew {
   background: url(http://mbkinc.org/wp-content/uploads/2017/10/paypal-donate-button-high-quality-png.png) no-repeat center;
+}
+
+.linked_in{
+  height: 28px;
+  width: 120px;
 }
 
 a {
@@ -144,5 +154,9 @@ nav a {
 @media (max-width: 600px) {
   .card {
     width: 85%;
+  }
+  
+  .searchForms{
+    width: 90%;
   }
 }
