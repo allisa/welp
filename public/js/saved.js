@@ -35,8 +35,6 @@ $(document).ready(() => {
             .append($('<p>').append($a))
             .append($form));
 
-
-        // .append($('<img>', { src: data.image_url, alt: 'image' }))
         $('.cardContainer').append($newCard);
         button.on('click', function () {
           let removeID = $(this).val();

@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html>
-<%- include('../partials/head') %>
-
-<body>
-  <%- include('../partials/header', {title: 'Search Results', classes: 'all_backgrounds'}) %>
-  <div class="cardContainer results">
-    <%- include('../partials/card') %>
-  </div>
-  <p class="count">Total Eats:
-    <%= results.length %>
-  </p>
-  </div>
-  </div>
-  <%- include('../partials/footer') %>
-
-</body>
-
+  <%- include('../partials/head') %>
+  <body>
+    <%- include('../partials/header', {title: 'Search Results', classes: 'all_backgrounds'}) %>
+    <div class="cardContainer results">
+      <%- include('../partials/card') %>
+    </div>
+    <p class="count">Total Eats:
+      <%= results.length %>
+    </p>
+    <!-- These closing divs are for the open divs inside the header partial -->
+    </div>
+    </div>
+    <%- include('../partials/footer') %>
+  </body>
 </html>
