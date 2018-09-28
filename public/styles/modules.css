@@ -83,7 +83,7 @@ address {
 
 .search-input, select {
   min-width: 300px;
-  width: 100%;
+  width: 98%;
   margin: 0;
   height: 60px;
 }
