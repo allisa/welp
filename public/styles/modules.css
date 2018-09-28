@@ -1,4 +1,3 @@
-
 .card {
   width: 40%;
   padding: 10px;
@@ -46,7 +45,7 @@ button {
   color: var(--primary);
   padding: 8px;
   border: solid 2px var(--secondary-darker);
-
+  cursor: pointer;
 }
 
 address {
@@ -103,7 +102,7 @@ address {
 }
 
 .kris {
-  background: url(https://i.ytimg.com/vi/sKyZ4_jNyjg/maxresdefault.jpg) no-repeat center;
+  background: url('/images/kris_food.jpg') no-repeat center;
   background-size: contain;
 }
 
