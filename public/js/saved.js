@@ -1,16 +1,17 @@
 'use strict';
 
 $(document).ready(() => {
+  //Setting up local storage
   let ls = JSON.parse(localStorage.getItem('yelp_ids')) || [];
-
+  //Gets the url
   let urlParams = new URLSearchParams(window.location.search);
   let save = urlParams.get('save');
-
+  //Gets the specific id from the url and pushes it into local storage
   let id = window.location.pathname.split('/')[3];
   if (!!save && id && !ls.includes(id)) {
     ls.push(id);
   }
-
+  //This code runs through local storage and renders each card to the page
   ls.forEach(place => {
     $.ajax({
       url: `/place/${place}`,
@@ -36,6 +37,7 @@ $(document).ready(() => {
             .append($form));
 
         $('.cardContainer').append($newCard);
+        //Event listener for remove button; also removes from local storage
         button.on('click', function () {
           let removeID = $(this).val();
           ls.splice(ls.indexOf(removeID.toString()), 1);
@@ -44,5 +46,6 @@ $(document).ready(() => {
       }
     })
   });
+  //Adding all items on the page to local storage
   localStorage.setItem('yelp_ids', JSON.stringify(ls));
 });

@@ -164,6 +164,7 @@ p {
   font-size: .5em;
 }
 
+/* Hamburger button code; courtesy of Erik Terwan */
 @media (max-width: 600px) {
   #navigationDesktop {
     display: none;

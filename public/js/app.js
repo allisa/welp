@@ -1,5 +1,6 @@
 'use strict';
 
+//This code gets the location from the user's device
 $(document).ready(() => {
   function getLocation() {
     return new Promise(function (resolve, reject) {
