@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
-  <%- include('../partials/head') %>
-  <body>
-    <%- include('../partials/header', {title: 'Favorites', classes: 'all_backgrounds'}) %>
-    <div class="cardContainer">
+<%- include('../partials/head') %>
+
+<body>
+  <%- include('../partials/header', {title: 'Favorites', classes: 'favorite_backgrounds'}) %>
+  <div class="cardContainer">
     <!-- Saved JS appends data here -->
-    </div>
-    <!-- These closing divs are for the open divs inside the header partial -->
-    </div>
-    </div>
-    <%- include('../partials/footer') %>
-    <script src="/js/saved.js"></script>
-  </body>
+  </div>
+  <!-- These closing divs are for the open divs inside the header partial -->
+  </div>
+  </div>
+  <%- include('../partials/footer') %>
+  <script src="/js/saved.js"></script>
+</body>
+
 </html>
