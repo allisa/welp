@@ -115,6 +115,7 @@ address {
 
 .andrew {
   background: url('/images/andrew_food.jpg') no-repeat center;
+  background-size: contain;
 }
 
 .jimmy, .allisa, .kris, .andrew{
