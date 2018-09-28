@@ -15,7 +15,7 @@ const getResults = (req, res) => {
   let radius = `&radius=${req.query.radius * 1609}`;
   let lat = `&latitude=${req.query.lat}`;
   let long = `&longitude=${req.query.long}`;
-  let limit = `&limit=4`;
+  let limit = `&limit=50`;
   let price = `&price=${req.query.price}`;
 
   superagent.get(`https://api.yelp.com/v3/businesses/search?${query}${cat}${radius}${long}${lat}${limit}${price}`)
@@ -24,7 +24,11 @@ const getResults = (req, res) => {
       if (err) {
         res.render('pages/error', { err: err });
       } else {
-        let results = apiResponse.body.businesses.map(place => ({
+        let restaurants = apiResponse.body.businesses;
+        if (restaurants.length) {
+          restaurants = apiResponse.body.businesses.slice(0, 3);
+        }
+        let results = restaurants.map(place => ({
           yelp_id: place.id,
           name: place.name,
           image_url: place.image_url,
