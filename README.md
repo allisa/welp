@@ -13,9 +13,10 @@ Our project lets people search for restaurants and decides for them where to eat
 Consumers are indecisive, especially when it comes to food. Our goal is to help consumers by providing the top resaurants based on various criteria.
 
 ## MVP
-The application will decide, on behalf of the user, the bestaurant (best restaurant)based on user search criteria. Users can search, save, delete, update, and add their favorite restaurants.  Search results will be populated from the Yelp API. 
+The application will decide, on behalf of the user, the bestaurant (best restaurant)based on user search criteria. Users can search, save, delete, update, and add their favorite restaurants. <!-- Tense on this sentence is different from every other sentence. --> Search results will be populated from the Yelp API. 
 
 ## User Stories
+<!-- You need either trailing whitespace or bullet points to make these show as separate lines. -->
 As a user, I want to be able to see restaurants based on search queries.
 As a user, I want to add favorite restaurants, as well as, delete and edit favorites.
 As a user, I want the ability to add custom restaurants.
@@ -31,11 +32,13 @@ As a deveolper, I want to use modular style design using a SMACSS template.
 As a developer, I want to show the creators of this app on an about us page.
 
 ## Stretch Goals
+<!-- This should also have bullet points. -->
 King County Food Ratings
 Google Maps API for directions
 Log search results to provide suggestions on future searches 
 Use table joins to provide search suggestions
 
+<!-- This is incorrect. -->
 **Version**: 1.0.0
 
 ## Architecture
@@ -44,6 +47,7 @@ Yelp Api, HTML 5 navigator, PG, Express, SuperAgent, Node, Method Override, CSS,
 ## User Requirements
 Users must enable location when using this APP.
 
+<!-- There are a LOT of missing pieces in this README: directions to get it up and running, along with all these other pieces. -->
 ## API Endpoints
 
 ## Site Endpoints

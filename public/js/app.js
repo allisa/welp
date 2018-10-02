@@ -1,5 +1,6 @@
 'use strict';
 
+// I love that you kept this as simple as possible.
 //This code gets the location from the user's device
 $(document).ready(() => {
   function getLocation() {

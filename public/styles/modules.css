@@ -60,6 +60,11 @@ address {
   padding: 0px 15px
 }
 
+/* Given that most of the next 3 declarations are the same, I might
+ * think about pulling the similarities out into a btn class, making
+ * each button have btn and add/delete/search classes, and
+ * letting the add/delete/search class just have that background.
+ */
 .add_btn{
   background: url('../images/delete_btn.png') no-repeat center;
   background-size: 70px;
@@ -164,6 +169,7 @@ p {
   font-size: .5em;
 }
 
+/* Thank you for citing your sources! */
 /* Hamburger button code; courtesy of Erik Terwan */
 @media (max-width: 600px) {
   #navigationDesktop {

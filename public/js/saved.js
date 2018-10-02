@@ -11,6 +11,7 @@ $(document).ready(() => {
   if (!!save && id && !ls.includes(id)) {
     ls.push(id);
   }
+  // i am still just so happy about these comments
   //This code runs through local storage and renders each card to the page
   ls.forEach(place => {
     $.ajax({
@@ -18,6 +19,11 @@ $(document).ready(() => {
       method: 'GET',
       success: data => {
 
+        // This is complex enough that I might consider using handlebars or similar.
+        // Or, since it seems to replicate what your card partial does on the backend...
+        // I would probably do a res.render on the backend, not sending back JSON,
+        // but sending back a rendered partial. Then I'd just stick the HTML into the DOM
+        // here.
         let $a = $('<a>', { href: data.yelp_url, target: '_blank' }).text('More Details...');
         let button = $('<button>', { value: data.id, class: 'add_btn' });
 
@@ -27,6 +33,8 @@ $(document).ready(() => {
           .append(button);
 
         let $newCard = $('<div>', { class: 'card' })
+          // I was briefly skeptical of hand-CSSing, but since it's for the background...
+          // I approve!
           .css('background', `url(${data.image_url}) no-repeat center`)
           .append($('<div>', { class: 'transparent' })
             .append($('<h3>').text(data.name))
