@@ -1,4 +1,5 @@
 {
+  /* There is a lot in here from the blog app that isn't relevant for you. */
   "globals" : {
     "rawData": true,
     "Article": true,

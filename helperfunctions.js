@@ -1,16 +1,22 @@
 'use strict';
+// I love the amount of commenting you have in this file. <3
 
 //Setup server modules
 const pg = require('pg');
+// I think I have a slight preference that dotenv configuration be done in your server file,
+// with the rest of your configuration.
 require('dotenv').config();
 const superagent = require('superagent');
 const conString = process.env.DATABASE_URL;
 const client = new pg.Client(conString);
 client.connect();
+// Hmm, that's not how you add an event listener for error...
+// Should just be on('error')
 client.on('pages/error', error => console.error(error));
 
 //Querying and receiving results from API
 const getResults = (req, res) => {
+  // You could use superagent's .query() for this! https://visionmedia.github.io/superagent/#get-requests
   let query = 'term=food';
   let cat = `&categories=${req.query.cuisine.toLowerCase()}`;
   let radius = `&radius=${req.query.radius * 1609}`;
@@ -33,9 +39,11 @@ const getResults = (req, res) => {
           yelp_id: place.id,
           name: place.name,
           image_url: place.image_url,
+          // the next line fills me with joy
           categories: place.categories.map(item => item.title).join(', '),
           rating: place.rating,
           address: place.location.display_address.join('\n'),
+          // wish this was called 'open' or something instead of hours
           hours: (place.is_closed ? 'No :(' : 'Yes!!'),
           lat: place.coordinates.latitude,
           long: place.coordinates.longitude,
@@ -91,7 +99,7 @@ const returnData = (req, res) => {
 const deletePlace = (req, res) => {
   let SQL = 'DELETE FROM restaurants WHERE id = $1;';
   let values = [req.body.id];
-  client.query(SQL, values, (err, result) => {
+  client.query(SQL, values, (err) => {
     if (err) {
       res.render('pages/error', { err: err });
     } else {

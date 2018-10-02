@@ -23,12 +23,14 @@ app.use(methodOverride(function (req, res) {
   }
 }));
 
+// these are nice, and so is the commenting!
 //Server routes
 app.get('/', (req, res) => res.redirect('/search'));
 
 app.get('/results', helperFunction.getResults);
 app.get('/search', (req, res) => res.render('index'));
 app.get('/about', (req, res) => res.render('pages/about'));
+// It's convention to use plural names in routes, i.e. '/places'.
 app.get('/place/:id', helperFunction.returnData);
 app.delete('/place', helperFunction.deletePlace);
 app.post('/place', helperFunction.addPlace);

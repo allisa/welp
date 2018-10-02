@@ -6,6 +6,7 @@
     <div class="cardContainer index">
       <section class="searchForms">
         <form method="GET" action="/results">
+          <!-- look at all these best practices being followed -->
           <label for="cuisine">Cuisine: </label>
           <input type="text" name="cuisine" id="cuisine" class="search-input" required />
           <label for="radius">Radius (1-5 miles): </label>
@@ -32,6 +33,9 @@
         </form>
       </section>
     </div>
+    <!-- The fact you need to comment this should warn you, it's not good practice! -->
+    <!-- I'd prefer either defining those two divs within this file, or including those close divs
+      in the footer. -->
     <!-- Two closing divs for the opening divs in the header partial -->
     </div>
     </div>
